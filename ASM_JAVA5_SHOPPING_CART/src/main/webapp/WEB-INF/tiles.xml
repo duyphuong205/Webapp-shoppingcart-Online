@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- layout for user -->
+<definition name="layoutUser" template="/WEB-INF/LayoutForUser/layoutUser.jsp">
+<put-attribute name="header" value="/WEB-INF/LayoutForUser/_header.jsp"/>
+<put-attribute name="body" value=""/>
+<put-attribute name="footer" value="/WEB-INF/LayoutForUser/_footer.jsp"/>
+</definition>
+<!-- return Controller RequestMapping -->
+<definition name="home/*" extends="layoutUser">
+<put-attribute name="body" value="/WEB-INF/views/home/{1}.jsp"/>
+</definition>
+
+
+	<!-- layout for admin -->
+<definition name="layoutAdmin" template="/WEB-INF/LayoutForAdmin/layoutAdmin.jsp">
+<put-attribute name="menu" value="/WEB-INF/LayoutForAdmin/_menu.jsp"/>
+<put-attribute name="aside" value="/WEB-INF/LayoutForAdmin/_aside.jsp"/>
+<put-attribute name="body" value=""/>
+<put-attribute name="footer" value="/WEB-INF/LayoutForAdmin/_footer.jsp"/>
+</definition>
+<!-- return Controller RequestMapping -->
+<definition name="admin/*" extends="layoutAdmin">
+<put-attribute name="body" value="/WEB-INF/views/admin/{1}.jsp"/>
+</definition>
+</tiles-definitions>
